@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {Comic} from '../../services/models/Comic';
 import {ComicService} from '../../services/comic.service';
 @Component({
@@ -8,16 +8,19 @@ import {ComicService} from '../../services/comic.service';
   providers: [ComicService],
 })
 export class ComicComponent implements OnInit {
-  comic: Comic[] = [];
+  @Input() comic: Comic;
 
   constructor(
     private comicService: ComicService
   ) { }
 
   ngOnInit(): void {
-    this.comicService.getComic().subscribe( res =>{
-
-      console.log('Res ', res);
-    });
+    this.fetchComic();
+  }
+  fetchComic(){
+  this.comicService.getComics().subscribe(comics => {
+    this.comic = comics;
+    console.log(comics.safe_title);
+  })
   }
 }
