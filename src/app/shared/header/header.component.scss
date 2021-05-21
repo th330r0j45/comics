@@ -1,0 +1,12 @@
+nav>a {
+    padding: 5px;
+    text-decoration: none;
+}
+
+nav>a.active {
+    background-color: blue;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}

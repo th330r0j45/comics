@@ -9,13 +9,15 @@ import {ComicService} from '../../services/comic.service';
 })
 export class ComicComponent implements OnInit {
   @Input() comic: Comic;
-
   constructor(
     private comicService: ComicService
   ) { }
 
   ngOnInit(): void {
     this.fetchComic();
+  }
+  doArray(n: number, startFrom: number): any[] {
+    return [...Array(n).keys()].map(i => i + startFrom);
   }
   fetchComic(){
   this.comicService.getComics().subscribe(comics => {

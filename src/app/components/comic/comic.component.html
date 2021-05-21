@@ -1,7 +1,17 @@
-<p>comic works!</p>
-<h1>Comics</h1>
-<h2>
-    {{ comic.safe_title }}
-</h2>
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>
+            Comic tittle: {{ comic.safe_title|uppercase }}
+        </mat-card-title>
+        <mat-card-subtitle>Day:{{ comic.day }}<br> Year: {{ comic.year}} <br>Number: {{ comic.num}}
+        </mat-card-subtitle>
+        <mat-card-content>
 
-<p>{{ comic.transcript}}</p>
+        </mat-card-content>
+    </mat-card-header>
+    <div class="crop-image">
+        <img mat-card-image [src]="comic.img" [alt]="comic.alt">
+    </div>
+
+
+</mat-card>
