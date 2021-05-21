@@ -5,11 +5,19 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './rateit.component.html',
   styleUrls: ['./rateit.component.scss']
 })
-export class RateitComponent implements OnInit {
+export class RateitComponent  {
+  star: 0;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  formatLabel(value: number) {
+    if (value >= 6) {
+      return Math.round(value / 6);
+    }
+    return value;
+  }
+  updateSetting(event){
+    debugger
+    this.star = event.value;
+    console.log(this.star);
   }
 
 }
