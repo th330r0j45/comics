@@ -7,12 +7,17 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class ComicService {
-  constructor(private http: HttpClient) { }
-  getComic(id: string){
-    return this.http.get<Comic>(
-      `${environment.url_api}/${id}/info.0.json`);
+  constructor(private http: HttpClient) {
   }
+  // getComic(){
+  //   debugger
+  //   return this.http.get<Comic>(
+  //     `${environment.url_api}/${id}/info.0.json`);
+  //     console.log(this.getComic);
+  // }
   getComics(): Observable<any> {
-    return this.http.get<any[]>(`${environment.url_api}/614/info.0.json`);
+    const id = Math.ceil(Math.random() * 2464).toString();
+    debugger
+    return this.http.get<any[]>(`${environment.url_api}/${id}/info.0.json`);
   }
 }

@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import {Comic} from '../../services/models/Comic';
 import {ComicService} from '../../services/comic.service';
+import swal from 'sweetalert2';
+
 @Component({
   selector: 'app-comic',
   templateUrl: './comic.component.html',
@@ -20,9 +22,11 @@ export class ComicComponent implements OnInit {
     return [...Array(n).keys()].map(i => i + startFrom);
   }
   fetchComic(){
+    debugger
   this.comicService.getComics().subscribe(comics => {
     this.comic = comics;
-    console.log(comics.safe_title);
+    console.log(comics);
   })
   }
+  
 }

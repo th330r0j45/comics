@@ -8,6 +8,6 @@ export interface Comic {
     transcript: string;
     alt: string;
     img: string;
-    tittle: string;
+    title: string;
     day: string;
 }

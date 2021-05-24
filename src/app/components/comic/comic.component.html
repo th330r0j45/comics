@@ -1,7 +1,7 @@
 <mat-card>
     <mat-card-header>
         <mat-card-title>
-            Comic tittle: {{ comic.safe_title|uppercase }}
+            Comic tittle: {{ comic.safe_title | uppercase }}
         </mat-card-title>
         <mat-card-subtitle>Day:{{ comic.day }}<br> Year: {{ comic.year}} <br>Number: {{ comic.num}}
         </mat-card-subtitle>
@@ -9,8 +9,11 @@
 
         </mat-card-content>
     </mat-card-header>
+    <mat-divider></mat-divider>
+    <button mat-raised-button color="primary">Random comic</button>
     <div class="crop-image">
         <img mat-card-image [src]="comic.img" [alt]="comic.alt">
     </div>
-    <app-rateit></app-rateit>
+    <app-rateit> </app-rateit>
 </mat-card>
+<mat-divider></mat-divider>
