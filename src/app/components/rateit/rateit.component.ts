@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+// SweetAlert2
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-rateit',
@@ -17,6 +19,12 @@ export class RateitComponent  {
   updateSetting(event){
     debugger
     this.star = event.value;
+    Swal.fire({
+      icon: 'success',
+      title: 'Your rate has been saved',
+      showConfirmButton: false,
+      timer: 1500
+    });
     console.log(this.star);
   }
 

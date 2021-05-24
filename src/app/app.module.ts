@@ -18,6 +18,7 @@ import { MatListModule } from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatDividerModule} from '@angular/material/divider';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import {MatDividerModule} from '@angular/material/divider';
     MatListModule,
     MatCardModule,
     MatSliderModule,
-    MatDividerModule
+    MatDividerModule,
+    SweetAlert2Module
   ],
   providers: [],
   bootstrap: [AppComponent]

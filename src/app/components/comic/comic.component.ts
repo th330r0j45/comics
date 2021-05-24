@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import {Comic} from '../../services/models/Comic';
 import {ComicService} from '../../services/comic.service';
-import swal from 'sweetalert2';
+// SweetAlert2
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-comic',
@@ -22,11 +23,19 @@ export class ComicComponent implements OnInit {
     return [...Array(n).keys()].map(i => i + startFrom);
   }
   fetchComic(){
-    debugger
-  this.comicService.getComics().subscribe(comics => {
+    Swal.fire({
+      title: 'Charging comic',
+      html: 'I will close in <b></b> 2 seconds.',
+      timer: 2000,
+      timerProgressBar: true,
+    });
+    this.comicService.getComics().subscribe(comics => {
     this.comic = comics;
     console.log(comics);
-  })
+  });
   }
-  
+  randomComic(event){
+    window.location.reload();
+  }
+
 }
